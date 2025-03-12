@@ -1,0 +1,22 @@
+{
+  "name": "todo-server",
+  "version": "1.0.0",
+  "description": "server for todo application",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aashni Haria",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}
