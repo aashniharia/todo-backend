@@ -6,7 +6,7 @@ import connectDB from "../db/index.js";
 import Todo from "../models/todo.models.js";
 dotenv.config();
 const app = express();
-console.log("hi inside server");
+console.log("Server has started");
 connectDB()
   .then(() => {
     app.listen(process.env.PORT || 5000, () => {
@@ -30,10 +30,8 @@ app.use(express.json());
 
 // Routes
 app.get("/api/health", (req, res) => {
-  console.log("request for health");
-  setTimeout(() => {
-    res.status(200).json({ status: "ok" });
-  }, 5000);
+  console.log("request for server health");
+  res.status(200).json({ status: "ok" });
 });
 
 app.get("/api/todos", async (req, res) => {
