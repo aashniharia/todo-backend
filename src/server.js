@@ -6,6 +6,7 @@ import connectDB from "../db/index.js";
 import Todo from "../models/todo.models.js";
 dotenv.config();
 const app = express();
+console.log("hi inside server");
 connectDB()
   .then(() => {
     app.listen(process.env.PORT || 5000, () => {
@@ -28,6 +29,13 @@ app.use(
 app.use(express.json());
 
 // Routes
+app.get("/api/health", (req, res) => {
+  console.log("request for health");
+  setTimeout(() => {
+    res.status(200).json({ status: "ok" });
+  }, 5000);
+});
+
 app.get("/api/todos", async (req, res) => {
   try {
     const todos = await Todo.find().sort({ createdAt: -1 });
